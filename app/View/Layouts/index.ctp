@@ -1,4 +1,4 @@
-<?php
+		<?php
 $controller = $this->params['controller'];
 $action = $this->params['action'];
 ?>

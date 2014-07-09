@@ -5,9 +5,6 @@
 ?>
 
 
-<?php echo $this->Html->script('jquery-1.8.3.min.js'); ?>
-
-
 <?php 
 $this->Paginator->options(array(
 	'update' => '#content',
@@ -47,7 +44,7 @@ $this->Paginator->options(array(
 	<?php
 
 	  
-		echo $this->Form->input('filter_status', array('type' => 'select', 'label' => '', 'options' => array('all' => 'Select Status', 'active' => 'Active', 'inactive' => 'InActive'), 'class' => 'combo2 curve1','div'=>false)); ?>
+		echo $this->Form->input('filter_status', array('type' => 'select', 'label' => '', 'options' => array('all' => 'Select Status', 'static' => 'Static', 'non-static' => 'Non-Static'), 'class' => 'combo2 curve1','div'=>false)); ?>
 		&nbsp;
 		<?php
 		//echo $this->Form->end(array('label'=>'Filter','class'=> 'curve3 button2','div'=>false));
@@ -85,8 +82,11 @@ $this->Paginator->options(array(
 					<th><?php echo $this->Paginator->sort('price','Price');?></th>
 					<th><?php echo $this->Paginator->sort('active','Status');?></th>
 					<!--<th>Total Flags</th>-->
-					<th><?php echo $this->Paginator->sort('###', 'static');?></th>
+					<th><?php echo $this->Paginator->sort('static', 'Static');?></th>
+					
 					<th class="actions"><?php echo __('Actions');?></th>
+					<th><?php echo $this->Paginator->sort('up', 'Up'); ?></th>
+					<th><?php echo $this->Paginator->sort('down', 'down'); ?> </th>
 			</tr>
 			<?php
 			foreach ($Banners as $Banner): ?>
@@ -104,6 +104,20 @@ $this->Paginator->options(array(
 							echo 'InActive'; 
 						}
 						?>&nbsp;</td>
+
+
+				<td><?php 
+						if(h($Banner['Banner']['static']==1)){
+							echo 'Static'; 
+						}else if(h($Banner['Banner']['static']==0)){
+							echo 'Non-Static'; 
+						}
+						?>&nbsp;</td>
+
+				 
+				
+
+	
 				<!--<td>
 				<?php if(count($Banner['FlaggedBanner'])==1){ 
 					echo '<img src="'.$base_url.'img/blue.png" alt="1" />';
@@ -119,8 +133,29 @@ $this->Paginator->options(array(
 					<?php echo $this->Html->link(__('Edit'), array('action' => 'add', $Banner['Banner']['id'])); ?> |
 					<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $Banner['Banner']['id']), null, __('Are you sure you want to delete # %s?', $Banner['Banner']['id'])); ?>
 				</td>
+
+				<td>
+					<?php
+						echo $this->Html->link(
+						    $this->Html->image("up.png"),
+						    array(
+						        'controller' => 'banners',
+						        'action' => 'up_banner',
+						        'id' => $Banner['Banner']['id']
+						    )
+						); ?>
+				</td>
+		
+				
+
+
+				<td>
+					<?php 
+					echo '<img src="'.$base_url.'img/down.png" alt="2" />'; ?>
+				</td>
+
 			</tr>
-		<?php endforeach; ?>
+			<?php endforeach; ?>
 			<?php if(count($Banners)==0){?>
 			<tr>
 			<td colspan="10" align="center">

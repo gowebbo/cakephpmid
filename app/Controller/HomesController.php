@@ -119,7 +119,7 @@ class HomesController extends AppController
 		// );
 		$this->paginate = array(
 		    'limit' => 10,
-		    'order' => array('is_premium'=>'DESC','modified'=> 'DESC','id' => 'DESC'),
+		    'order' => array('static'=>'DESC','is_premium'=>'DESC','modified'=> 'DESC','id' => 'DESC'),
 		     );
 		$data = $this->paginate('Banner', $condition);
 		

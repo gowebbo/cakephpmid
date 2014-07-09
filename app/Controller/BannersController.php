@@ -96,9 +96,9 @@ class BannersController extends AppController {
                 }
 		
 		if(!empty($this->data['Banner']['filter_status']) && $this->data['Banner']['filter_status']!='all'){
-			if ($this->data['Banner']['filter_status'] == 'active') {
+			if ($this->data['Banner']['filter_status'] == 'static') {
                 $filter = "1";
-            }elseif ($this->data['Banner']['filter_status'] == 'inactive') {
+            }elseif ($this->data['Banner']['filter_status'] == 'non-static') {
 				 $filter = "0";
 			}
 			$searchCriteriaTerm=trim($filter);
@@ -106,9 +106,9 @@ class BannersController extends AppController {
 			$savecrit = "filter_status:".$this->data['Banner']['filter_status'];
 		}else if(!empty($this->params['pass'][0]) && $this->params['pass'][0]!='filter_status:all'){
 			$value_explode = explode(':',$this->params['pass'][0]);
-			if ($value_explode[1] == 'active') {
+			if ($value_explode[1] == 'static') {
                 $filter = "1";
-            }elseif ($value_explode[1] == 'inactive') {
+            }elseif ($value_explode[1] == 'non-static') {
 				 $filter = "0";
 			}
 			$searchCriteriaTerm=trim($filter);
@@ -133,6 +133,23 @@ class BannersController extends AppController {
 	}
 
 
+	public function up_banner($id = null) {
+		// takes the id of the current banner, and find the neighbours of the banner.
+		// Then, takes the neighbours and slides up if there is a top banner
+		//else shows error when there is no banner.
+		pr ($this->request->pass);
+		//pr ($id);
+		die();
+	}
+
+
+	public function down_banner() {
+		//takes the id of the current banner, and finds the neighbours of the banner.
+		// then, takes the neighbours and slides down if there is a bottom banner
+		//else shows error that no banner is present.
+	}
+
+
 	public function admin_premium_ads() {
 		$condition = array();
 		$savecrit = '';
@@ -146,17 +163,17 @@ class BannersController extends AppController {
 		if(!empty($this->data['Banner']['filter_status']) && $this->data['Banner']['filter_status']!='all'){
 			if ($this->data['Banner']['filter_status'] == 'premium') {
                 $filter = "1";
-            }elseif ($this->data['Banner']['filter_status'] == 'non-premium') {
+            }elseif ($this->data['Banner']['filter_status'] == 'non_premium') {
 				 $filter = "0";
 			}
 			$searchCriteriaTerm=trim($filter);
-			$condition[]    = "(Banner.status = '".$searchCriteriaTerm."')";		
+			$condition[]    = "(Banner.premium = '".$searchCriteriaTerm."')";		
 			$savecrit = "filter_status:".$this->data['Banner']['filter_status'];
 		}else if(!empty($this->params['pass'][0]) && $this->params['pass'][0]!='filter_status:all'){
 			$value_explode = explode(':',$this->params['pass'][0]);
 			if ($value_explode[1] == 'premium') {
                 $filter = "1";
-            }elseif ($value_explode[1] == 'non-premium') {
+            }elseif ($value_explode[1] == 'non_premium') {
 				 $filter = "0";
 			}
 			$searchCriteriaTerm=trim($filter);

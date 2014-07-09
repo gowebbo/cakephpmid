@@ -153,6 +153,16 @@
 			?>
 			</td>
 		</tr>
+
+		<tr>
+			<td>Static:</td>
+			<td>
+			<?php
+				$options_two=array('0'=>'Non-Static','1'=>'Static');
+				echo $this->Form->input('static',array('type'=>'select','label' => '', 'options' => $options_two, 'class' => 'combo2 curve1')); 
+			?>
+			</td>
+		</tr>
 		
 		<!--<tr>
 			<td>Flagged this banner:</td>
