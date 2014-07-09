@@ -1,0 +1,24 @@
+<div id="wrap">
+    <table cellspacing="0" cellpadding="0" class="table">
+        <tr>
+            <td>
+
+                <div class="error">Incorrect Username / Password</div>
+                <div class="message">You have successfully logged out.</div>
+                <?php echo $this->Form->create('Admin');?>
+                    <h1>Dashboard Login</h1>
+
+                    <div class="logbox curve3 shadow">
+
+                        <p>Username<br/><?php echo $this->Form->input('username', array('class','text1 curve1')); ?></p>
+
+                        <p>Password<br/><?php echo $this->Form->input('password', array('class','text1 curve1')); ?></p>
+
+                        <p style="text-align:right"><?php echo $this->Form->end(__('Submit',array('class','button1 curve2')));?></p>
+                    </div>
+
+                <br/><br/><br/><br/><br/><br/>
+            </td>
+        </tr>
+    </table>
+</div>

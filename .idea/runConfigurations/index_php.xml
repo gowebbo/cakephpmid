@@ -1,0 +1,11 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="index.php" type="JavascriptDebugSession" factoryName="Remote">
+    <JSRemoteDebuggerConfigurationSettings>
+      <option name="engineId" value="firefox" />
+      <option name="fileUrl" value="http://psraviolistore.local:8080/" />
+    </JSRemoteDebuggerConfigurationSettings>
+    <RunnerSettings RunnerId="JavascriptDebugRunner" />
+    <ConfigurationWrapper RunnerId="JavascriptDebugRunner" />
+    <method />
+  </configuration>
+</component>

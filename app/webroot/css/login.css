@@ -1,0 +1,59 @@
+  /*  
+  Website:	Control Panel
+  Type:			Stylesheet 
+  Version:	2.1
+  Media: 		Screen
+  */
+
+/* GENERAL */
+html {overflow-y: scroll; }
+html, body {height:100%;border:0;margin:0;padding:0;}
+body {width:100%;background:#FBFBFB;font-size:12px;font-family: Tahoma, Geneva, sans-serif;color:#333333;line-height:16px;}
+
+table {margin:0;padding:0;background-color:transparent;border:0px;}
+td {vertical-align:top;}
+
+form, div, input, textarea { margin:0;padding:0;border:0;}
+input, textarea, select, option {font-size:12px;font-family: Tahoma, Geneva, sans-serif;color:#333333;line-height:16px;}
+input {vertical-align:top;}
+
+ul, ol, li, dd, dt, dd {margin:0;padding:0;list-style:none;}
+h1, h2, h3, h4, h5, h6, pre {margin:0px;padding:0px;font-family: Tahoma, Geneva, sans-serif;}
+
+p, img, blockquote,a, a:hover {margin:0;padding:0;border:0px; }
+a {color:#333333;text-decoration:none;}
+a:hover {color:#D54E21}
+
+/* WRAPS */
+#wrap {margin:0 auto;height:auto;height:100%;width:300px;position:relative;}
+
+.table {width:100%;height:100%;}
+.table td {padding:10px 0;vertical-align:middle;}		
+.table td h1 {font-size:24px;text-align:center;color:#535353;font-weight:normal;padding:15px 0;line-height:28px;}
+
+.logbox {width:249px;border:1px solid #DFDFDF;background:#ffffff;padding:25px 31px 0px 28px;font-size:14px;color:#777777;}
+.logbox p {padding-bottom:18px;}
+
+.curve1 {-moz-border-radius:3px; -webkit-border-radius:3px;  -khtml-border-radius:3px; border-radius:3px;}
+.curve2 {-moz-border-radius:15px; -webkit-border-radius:15px;  -khtml-border-radius:15px; border-radius:15px;}
+.curve3 {-moz-border-radius:10px; -webkit-border-radius:10px;  -khtml-border-radius:10px; border-radius:10px;}
+
+.shadow {-moz-box-shadow: 0 4px 10px -1px #dddddd;-webkit-box-shadow: 0 4px 10px -1px #dddddd;box-shadow: 0 4px 10px -1px #dddddd}
+
+
+.text1 {border:1px solid #DFDFDF;width:240px;height:17px;padding:6px 4px;margin-top:4px;}			
+
+.button1 {border:1px solid #3e9ccb;background:url(../images/buttons/button1.gif) repeat-x top left;color:#ffffff;padding:3px 11px 4px 11px;cursor: pointer;}
+.button1:hover {border:1px solid #1a6488;color:#e8f6fd;}
+
+.button2 {border:1px solid #cccccc;background:url(../images/buttons/button2.gif) repeat-x top left;color:#666666;padding:3px 11px 4px 11px;cursor: pointer;}
+.button2:hover {border:1px solid #aaaaaa;color:#000000;}
+		
+.error, .success, .message {font-size:11px;padding:8px 15px 8px 15px;margin:0px;-moz-border-radius:3px; -webkit-border-radius:3px;  -khtml-border-radius:3px; border-radius:3px;display:none;}
+.error {border:1px solid #f05e31;background:#ffeae4;color:#e93700;}
+.success {border:1px solid #c0df7b;background:#e4f3c3;color:#45b800;}
+.message {border:1px solid #efe278;background:#fffad0;color:#bd8a00;}
+		
+/* CLEAR */
+.clear {clear:both;}
+
