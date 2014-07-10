@@ -133,17 +133,24 @@ class BannersController extends AppController {
 	}
 
 
-	public function up_banner($id = null) {
+	public function admin_up_banner($id = null) {
 		// takes the id of the current banner, and find the neighbours of the banner.
 		// Then, takes the neighbours and slides up if there is a top banner
-		//else shows error when there is no banner.
-		pr ($this->request->pass);
+		//else shows error when there is no banner
+		//pr ($this->params);
+		//echo $this->params['named']['id'];
+		if(isset($this->params['named']['id'])) 
+	    	$id = $this->params['named']['id'];
+		pr ($id);
 		//pr ($id);
+		//get neighbours of the id 
+		$neighbours = $this->Banner->find('neighbours', array('field' => 'id', 'value' => $id));
+		pr ($neighbours);
 		die();
 	}
 
 
-	public function down_banner() {
+	public function admin_down_banner() {
 		//takes the id of the current banner, and finds the neighbours of the banner.
 		// then, takes the neighbours and slides down if there is a bottom banner
 		//else shows error that no banner is present.
